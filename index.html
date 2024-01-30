@@ -910,9 +910,9 @@ window.addEventListener('DOMContentLoaded', handleScroll);
         this.data = {
     text: window.innerWidth > window.innerHeight ? 'TECHNOTSAV"24' : 'TECHNO\nTSAV"24',
     amount: 1500,
-    particleSize: .6,
+    particleSize: window.innerWidth > window.innerHeight ? 0.6: 0.4,
     particleColor: 0xffffff,
-    textSize: 12,
+    textSize: window.window.innerWidth > window.innerHeight ? 12 : 6,
     area: 250,
     ease: .05,
     
