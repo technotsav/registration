@@ -39,82 +39,82 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-html, body { 
-  
-  margin: 0;
-  height: 100%;
-  /* overflow: hidden; */
-  font-family: 'Roboto' !important; 
-  color: #000000;
-  font-size: 9px;
-  overflow-x: hidden;
-}
+    html, body { 
+      
+      margin: 0;
+      height: 100%;
+      /* overflow: hidden; */
+      font-family: 'Roboto' !important; 
+      color: #000000;
+      font-size: 9px;
+      overflow-x: hidden;
+    }
 
-#magic {
+    #magic {
 
-  position: top;
-  width: 100%;
-  height: 100vh;
-  display: block;
-  top: 0;
-  left: 0;
-  z-index: -9999;
-}
+      position: top;
+      width: 100%;
+      height: 100vh;
+      display: block;
+      top: 0;
+      left: 0;
+      z-index: -9999;
+    }
 
-.playground{
+    .playground{
 
-  position: top;
-  width: 100%;
-  height: 100vh;
-  display: block;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  align-items: center;
+      position: top;
+      width: 100%;
+      height: 100vh;
+      display: block;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      align-items: center;
 
-}
-.two{
-  position: top;
-  width: 100%;
-  height: 100vh;
-  display: block;
-  top: 0;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.bottomPosition{
+    }
+    .two{
+      position: top;
+      width: 100%;
+      height: 100vh;
+      display: block;
+      top: 0;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .bottomPosition{
 
-  text-align: center;
-  
-}
-.minText{
-  
-  font-size: 14px;
-}
+      text-align: center;
+      
+    }
+    .minText{
+      
+      font-size: 14px;
+    }
 
-a {
-  color: white;
-  font-size: 12px;
-  text-decoration: none;
-}
+    a {
+      color: white;
+      font-size: 12px;
+      text-decoration: none;
+    }
 
-.logo {
-    width: 50px;
-    height: 50px;
-}
-.container {
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+    .container {
       position: relative;
 
     }
 
     .special {
       position: absolute;
-      bottom: 0;
+      bottom: 30px;
       left: 50%;
       transform: translateX(-50%);
       text-align: center;
@@ -167,11 +167,7 @@ a {
 
     input[type="checkbox"] {
       transform: scale(2);
-      /* justify-content: flex-start;
-      align-self: start; */
-      /* margin-right: 5px; */
-      /* vertical-align: middle; */
-      /* top: 0; */
+      
     }
 
     input[type="submit"] {
@@ -195,7 +191,7 @@ a {
       border: 1px solid #ddd;
       border-radius: 4px;
       font-size: 14px;
-}
+    }
 
 
     .fields-container {
@@ -220,6 +216,76 @@ a {
       justify-content: space-between;
       align-items: center;
     }
+    .radio-label {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    display: block;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 22px;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.radio-label:hover {
+    color: #555;
+}
+
+.radio-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.radio-label input:checked ~ .checkmark {
+    background-color: #2196F3;
+    border-color: #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.radio-label input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.radio-label .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Add transitions for fluid animation */
+.radio-label input {
+    transition: opacity 0.2s;
+}
+
+.radio-label input:checked ~ .checkmark {
+    transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+
+
 
 
   </style>
@@ -256,402 +322,419 @@ a {
   
       <label for="Name of College">College Name:</label>
       <input type="text" placeholder="College Name - Location" name="Name of College" required>
-  
-      <h2 class="fill">Select Events:</h2><br>
-<div class="checkbox-container">
-    <label class="checkbox-label" for="eventLogicLoops">
-        <input type="checkbox" name="Select an event" value="LogicLoops" id="eventLogicLoops" onchange="handleEventChange()"> LogicLoops
-    </label>
-  
-    <label class="checkbox-label" for="eventCodeDeBasanti">
-        <input type="checkbox" name="Select an event" value="Code De Basanti" id="eventCodeDeBasanti" onchange="handleEventChange()"> Code De Basanti
-    </label>
-  
-    <label class="checkbox-label" for="eventPiRates">
-        <input type="checkbox" name="Select an event" value="pi-Rates" id="eventPiRates" onchange="handleEventChange()"> pi-Rates
-    </label>
-  
-    <label class="checkbox-label" for="eventElectroQuest">
-        <input type="checkbox" name="Select an event" value="ElectroQuest" id="eventElectroQuest" onchange="handleEventChange()"> ElectroQuest
-    </label>
-
-    <label class="checkbox-label" for="eventNritya-Abhay">
-        <input type="checkbox" name="Select an event" value="Nritya-Abhay" id="eventNritya-Abhay" onchange="handleEventChange()" > Nritya-Abhay
-    </label>
-</div>
-
-      
-      
+      <h2 class="fill">Select Event:</h2><br>
+      <div class="radio-container">
+          <label class="radio-label" for="eventLogicLoops">
+              <input type="radio" name="Select an event" value="LogicLoops" id="eventLogicLoops" onchange="handleEventChange()">
+              <span class="checkmark"></span> LogicLoops
+            </label>
+          <div id="logicLoopsFields" style="display: none;">
+            <label for="Number of Team members for logic loops">Number of Team Members for LogicLoops:</label>
+            <select id="logicLoopsTeamMembers" name="Number of Team members for logic loops" class="input-field">
+            <option selected value="">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select><br>
     
-      <div id="logicLoopsFields" style="display: none;">
-        <label for="Number of Team members for logic loops">Number of Team Members for LogicLoops:</label>
-<select id="logicLoopsTeamMembers" name="Number of Team members for logic loops" class="input-field">
-  <option value="">0</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-</select><br>
-
+            
+            <label for="LL: team name">LogicLoops Team Name:</label>
+            <input type="text" name="LL: team name"><br>
+    
+            <div id="member1" style="display: none;">
+            <label for="LL: name 1">Member 1:</label>
+            <input type="text" name="LL: name 1"><br>      
+            <label for="LL: number 1">Number 1:</label>
+            <input type="text" name="LL: number 1"><br>
+          </div>
+    
+            <div id="member2" style="display: none;">
+            <label for="LL: name 2">Member 2:</label>
+            <input type="text" name="LL: name 2"><br>
+            <label for="LL: number 2">Number 2:</label>
+            <input type="text" name="LL: number 2"><br>
+          </div>
+    
+            <div id="member3" style="display: none;">
+            <label for="LL: name 3">Member 3:</label>
+            <input type="text" name="LL: name 3"><br>
+            <label for="LL: number 3">Number 3:</label>
+            <input type="text" name="LL: number 3"><br>
+          </div>
+          </div>
         
-        <label for="LL: team name">LogicLoops Team Name:</label>
-        <input type="text" name="LL: team name"><br>
-
-        <div id="member1" style="display: none;">
-        <label for="LL: name 1">Member 1:</label>
-        <input type="text" name="LL: name 1"><br>      
-        <label for="LL: number 1">Number 1:</label>
-        <input type="text" name="LL: number 1"><br>
-      </div>
-
-        <div id="member2" style="display: none;">
-        <label for="LL: name 2">Member 2:</label>
-        <input type="text" name="LL: name 2"><br>
-        <label for="LL: number 2">Number 2:</label>
-        <input type="text" name="LL: number 2"><br>
-      </div>
-
-        <div id="member3" style="display: none;">
-        <label for="LL: name 3">Member 3:</label>
-        <input type="text" name="LL: name 3"><br>
-        <label for="LL: number 3">Number 3:</label>
-        <input type="text" name="LL: number 3"><br>
-      </div>
-    </div>
-  
-    <div id="codeDeBasantiFields" style="display: none;">
-      <label for="Number of Team members for Code de basanti">Number of Team Members for Code De Basanti:</label>
-      <select id="codeDeBasantiTeamMembers" name="Number of Team members for Code de basanti" class="input-field">
-        <option value="">0</option>  
-        <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-      </select><br>
-      
-  
-        <label for="CDB: team name">Team Name:</label>
-        <input type="text" name="CDB: team name"><br>
-  
-        <div id="cdbmember1" style="display: none;">
-        <label for="CDB: name 1" >Member 1:</label>
-        <input type="text" name="CDB: name 1"><br> 
-        <label for="CDB: number 1">Number 1:</label>
-        <input type="text" name="CDB: number 1"><br>
-        </div>
-
-        <div id="cdbmember2" style="display: none;">
-        <label for="CDB: name 2">Member 2:</label>
-        <input type="text" name="CDB: name 2"><br>
-        <label for="CDB: number 2">Number 2:</label>
-        <input type="text" name="CDB: number 2"><br>
-        </div>
-
-        <div id="cdbmember3" style="display: none;">
-        <label for="CDB: name 3">Member 3:</label>
-        <input type="text" name="CDB: name 3"><br>
-        <label for="CDB: number 3">Number 3:</label>
-        <input type="text" name="CDB: number 3"><br>
-        </div>  
-
-        <div id="cdbmember4" style="display: none;">
-        <label for="CDB: name 4">Member 4:</label>
-        <input type="text" name="CDB: name 4"><br>
-        <label for="CDB: number 4">Number 4:</label>
-        <input type="text" name="CDB: number 4"><br>
-        
-      </div>
-    </div>
-  
-    <div id="electroQuestFields" style="display: none;">
-      <label for="Number of Team members for ElectroQuest">Number of Team Members for ElectroQuest:</label>
-<select id="electroQuestTeamMembers" name="Number of Team members for ElectroQuest" class="input-field">
-  <option value="">0</option>
-  <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-</select><br>
-
-  
-      <label for="EQ: team name ">ElectroQuest Team Name:</label>
-      <input type="text" name="EQ: team name "><br>
-  
-      <div id="eqmember1" style="display: none;">
-      <label for="EQ: name 1">Member 1:</label>
-      <input type="text" name="EQ: name 1"><br>  
-      <label for="EQ: number 1">Number 1:</label>
-      <input type="text" name="EQ: number 1"><br>
-    </div>
-
-    <div id="eqmember2" style="display: none;">
-      <label for="EQ: name 2">Member 2:</label>
-      <input type="text" name="EQ: name 2"><br>  
-      <label for="EQ: number 2">Number 2:</label>
-      <input type="text" name="EQ: number 2"><br>
-    </div>
-
-<div id="eqmember3" style="display: none;">
-      <label for="EQ: name 3">Member 3:</label>
-      <input type="text" name="EQ: name 3"><br>
-  
-      <label for="EQ: number 3">Number 3:</label>
-      <input type="text" name="EQ: number 3"><br></div>
-    </div>
-  
-    <div id="piRatesFields" style="display: none;">
-      <label for="Number of Team members for pi-Rates">Number of Team Members for piRates:</label>
-<select id="piRatesTeamMembers" name="Number of Team members for pi-Rates" class="input-field">
-  <option value="">0</option>
-  <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-</select><br>
-
-  
-      <label for="PR: team name">piRates Team Name:</label>
-      <input type="text" name="PR: team name"><br>
-  
-      <div id="prmember1" style="display: none;">
-      <label for="PR: name 1">Member 1:</label>
-      <input type="text" name="PR: name 1"><br>
-  
-      <label for="PR: number 1">Number 1:</label>
-      <input type="text" name="PR: number 1"><br>
-    </div>
-    <div id="prmember2" style="display: none;">
-      <label for="PR: name 2">Member 2:</label>
-      <input type="text" name="PR: name 2"><br>
-  
-      <label for="PR: number 2">Number 2:</label>
-      <input type="text" name="PR: number 2"><br>
-    </div>
-    <div id="prmember3" style="display: none;">
-      <label for="PR: name 3">Member 3:</label>
-      <input type="text" name="PR: name 3"><br>
-  
-      <label for="PR: number 3">Number 3:</label>
-      <input type="text" name="PR: number 3"><br>
-    </div>
-    </div>
-    
-    <div id="nrityaAbhayFields" style="display: none;">
-      <label for="Number of Team members for Nritya-Abhay">Number of Team Members for Nritya-Abhay:</label>
-<select id="nrityaAbhayTeamMembers" name="Number of Team members for Nritya-Abhay" class="input-field">
-  <option value="">0</option>
-  <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-</select><br>
-  
-      <label for="NA: team name">Team Name:</label>
-      <input type="text" name="NA: team name"><br>
-      <div id="namember1" style="display: none;">
-      <label for="NA: name 1">Member 1:</label>
-      <input type="text" name="NA: name 1"><br>
-  
-      <label for="NA: number 1">Number 1:</label>
-      <input type="text" name="NA: number 1"><br>
-    </div>
-    <div id="namember2" style="display: none;">
-      <label for="NA: name 2">Member 2:</label>
-      <input type="text" name="NA: name 2"><br>
-  
-      <label for="NA: number 2">Number 2:</label>
-      <input type="text" name="NA: number 2"><br>
-    </div>
-    <div id="namember3" style="display: none;">
-      <label for="NA: name 3">Member 3:</label>
-      <input type="text" name="NA: name 3"><br>
-  
-      <label for="NA: number 3">Number 3:</label>
-      <input type="text" name="NA: number 3"><br>
-    </div>
-    <div id="namember4" style="display: none;">
-      <label for="NA: name 4">Member 4:</label>
-      <input type="text" name="NA: name 4"><br>
-    
-      <label for="NA: number 4">Number 4:</label>
-      <input type="text" name="NA: number 4"><br>
-    </div>
-    <div id="namember5" style="display: none;">
-      <label for="NA: name 5">Member 5:</label>
-      <input type="text" name="NA: name 5"><br>
-  
-      <label for="NA: number 5">Number 5:</label>
-      <input type="text" name="NA: number 5"><br>
-    </div>
-    <div id="namember6" style="display: none;">
-      <label for="NA: name 6">Member 6:</label>
-      <input type="text" name="NA: name 6"><br>
-  
-      <label for="NA: number 6">Number 6:</label>
-      <input type="text" name="NA: number 6"><br>
-    </div>
-    <div id="namember7" style="display: none;">
-      <label for="NA: name 7">Member 7:</label>
-      <input type="text" name="NA: name 7"><br>
-  
-      <label for="NA: number 7">Number 7:</label>
-      <input type="text" name="NA: number 7"><br>
-    </div>
-    <div id="namember8" style="display: none;">
-      <label for="NA: name 8">Member 8:</label>
-      <input type="text" name="NA: name 8"><br>
-  
-      <label for="NA: number 8">Number 8:</label>
-      <input type="text" name="NA: number 8"><br>
-    </div>
-    </div>
-    <input type="submit" value="Submit">
-    
-    <script>
-     
-
-            form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch('https://script.google.com/macros/s/AKfycbxhSPleC2-ZsnKaVYnNa63JrdZy2gCV1HgLYle3lIWowt6A23z8Z_iuHUeSi56_pCU/exec', { method: 'POST', body: new FormData(form)})
-              .then(response => alert("Thank you! your form is submitted successfully." ))
-              .then(() => { window.location.reload(); })
-              .catch(error => console.error('Error!', error.message))
-            })
-                  document.getElementById('registrationForm').addEventListener('submit', function(event) {
-                var checkboxes = document.querySelectorAll('input[type="checkbox"][name="Select an event"]');
-                var isChecked = false;
-                
-                checkboxes.forEach(function(checkbox) {
-                    if (checkbox.checked) {
-                        isChecked = true;
-                    }
-                });
-
-                if (!isChecked) {
-                    alert('Please select at least one event.');
-                    event.preventDefault(); // Prevent the form from submitting
-                }
-            });
-
-            function handleEventChange() {
-            var logicLoopsCheckbox = document.getElementById("eventLogicLoops");
-            var codeDeBasantiCheckbox = document.getElementById("eventCodeDeBasanti");
-            var piRatesCheckbox = document.getElementById("eventPiRates");
-            var electroQuestCheckbox = document.getElementById("eventElectroQuest");
-            var nrityaAbhayCheckbox = document.getElementById("eventNritya-Abhay");
-  
-            if (logicLoopsCheckbox.checked) {
-                if(piRatesCheckbox.checked){
-                  piRatesCheckbox.checked=false;
-                }
-                piRatesCheckbox.disabled = true;            
-            }else{
-              if(piRatesCheckbox.disabled){
-                piRatesCheckbox.disabled=false;
-              }
-            }
-            if (codeDeBasantiCheckbox.checked) {
-                if(electroQuestCheckbox.checked){
-                  electroQuestCheckbox.checked=false;
-                }
-                electroQuestCheckbox.disabled = true;
-            } else{
-              if(electroQuestCheckbox.disabled){
-                electroQuestCheckbox.disabled=false;
-                }
-            }
-            if (electroQuestCheckbox.checked) {
-                if(codeDeBasantiCheckbox.checked){
-                  codeDeBasantiCheckbox.checked=false;
-                }
-                codeDeBasantiCheckbox.disabled = true;
-            }else{
-              if(codeDeBasantiCheckbox.disabled){
-                codeDeBasantiCheckbox.disabled=false;
-              }
-            }
-            if (piRatesCheckbox.checked) {
-                if(logicLoopsCheckbox.checked){
-                  logicLoopsCheckbox.checked=false;
-                }
-                logicLoopsCheckbox.disabled = true;
-            } else{
-              if(logicLoopsCheckbox.disabled){
-                logicLoopsCheckbox.disabled=false;
-                }
-            }
-            document.getElementById('eventLogicLoops').addEventListener('load', function() {
-                var logicLoopsFields = document.getElementById('logicLoopsFields');
-                var logicLoopsCheckbox = document.getElementById('eventLogicLoops');
-                var logicLoopsTeamMembers = document.getElementById('logicLoopsTeamMembers');
-
-                if (logicLoopsCheckbox.checked) {
-                    logicLoopsFields.style.display = 'block';
-                    logicLoopsTeamMembers.setAttribute('required', 'required');
+          
+          <label class="radio-label" for="eventCodeDeBasanti">
+              <input type="radio" name="Select an event" value="Code De Basanti" id="eventCodeDeBasanti" onchange="handleEventChange()"><span class="checkmark"></span> Code De Basanti
+          </label>
+                  <div id="codeDeBasantiFields" style="display: none;">
+                    <label for="Number of Team members for Code de basanti">Number of Team Members for Code De Basanti:</label>
+                    <select id="codeDeBasantiTeamMembers" name="Number of Team members for Code de basanti" class="input-field">
+                      <option value="">0</option>  
+                      <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select><br>
                     
-                } else {
-                    logicLoopsFields.style.display = 'none';
-                    logicLoopsTeamMembers.removeAttribute('required');
-                }
-            });
+                
+                      <label for="CDB: team name">Team Name:</label>
+                      <input type="text" name="CDB: team name"><br>
+                
+                      <div id="cdbmember1" style="display: none;">
+                      <label for="CDB: name 1" >Member 1:</label>
+                      <input type="text" name="CDB: name 1"><br> 
+                      <label for="CDB: number 1">Number 1:</label>
+                      <input type="text" name="CDB: number 1"><br>
+                      </div>
+            
+                      <div id="cdbmember2" style="display: none;">
+                      <label for="CDB: name 2">Member 2:</label>
+                      <input type="text" name="CDB: name 2"><br>
+                      <label for="CDB: number 2">Number 2:</label>
+                      <input type="text" name="CDB: number 2"><br>
+                      </div>
+            
+                      <div id="cdbmember3" style="display: none;">
+                      <label for="CDB: name 3">Member 3:</label>
+                      <input type="text" name="CDB: name 3"><br>
+                      <label for="CDB: number 3">Number 3:</label>
+                      <input type="text" name="CDB: number 3"><br>
+                      </div>  
+            
+                      <div id="cdbmember4" style="display: none;">
+                      <label for="CDB: name 4">Member 4:</label>
+                      <input type="text" name="CDB: name 4"><br>
+                      <label for="CDB: number 4">Number 4:</label>
+                      <input type="text" name="CDB: number 4"><br>
+                      
+                    </div>
+                  </div>
+          
+          
+          <label class="radio-label" for="eventPiRates">
+              <input type="radio" name="Select an event" value="pi-Rates" id="eventPiRates" onchange="handleEventChange()"><span class="checkmark"></span> pi-Rates
+          </label>
+                <div id="piRatesFields" style="display: none;">
+                  <label for="Number of Team members for pi-Rates">Number of Team Members for piRates:</label>
+            <select id="piRatesTeamMembers" name="Number of Team members for pi-Rates" class="input-field">
+              <option value="">0</option>
+              <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select><br>
+          
+              
+                  <label for="PR: team name">piRates Team Name:</label>
+                  <input type="text" name="PR: team name"><br>
+              
+                  <div id="prmember1" style="display: none;">
+                  <label for="PR: name 1">Member 1:</label>
+                  <input type="text" name="PR: name 1"><br>
+              
+                  <label for="PR: number 1">Number 1:</label>
+                  <input type="text" name="PR: number 1"><br>
+                </div>
+                <div id="prmember2" style="display: none;">
+                  <label for="PR: name 2">Member 2:</label>
+                  <input type="text" name="PR: name 2"><br>
+              
+                  <label for="PR: number 2">Number 2:</label>
+                  <input type="text" name="PR: number 2"><br>
+                </div>
+                <div id="prmember3" style="display: none;">
+                  <label for="PR: name 3">Member 3:</label>
+                  <input type="text" name="PR: name 3"><br>
+              
+                  <label for="PR: number 3">Number 3:</label>
+                  <input type="text" name="PR: number 3"><br>
+                </div>
+                </div>
 
-            document.getElementById("logicLoopsFields").style.display = logicLoopsCheckbox.checked ? "block" : "none";
-            document.getElementById("codeDeBasantiFields").style.display = codeDeBasantiCheckbox.checked ? "block" : "none";
-            document.getElementById("piRatesFields").style.display = piRatesCheckbox.checked ? "block" : "none";
-            document.getElementById("electroQuestFields").style.display = electroQuestCheckbox.checked ? "block" : "none";
-            document.getElementById("nrityaAbhayFields").style.display = nrityaAbhayCheckbox.checked ? "block" : "none";
-            document.getElementById('nrityaAbhayTeamMembers').addEventListener('input', function() {
-                var numberOfTeamMembers = parseInt(this.value);
-                for (var i = 1; i <= 8; i++) {
-                    var inputField = document.getElementById("namember" + i);
-                    if (i <= numberOfTeamMembers) {
-                        inputField.style.display = "block";
-                    } else {
-                        inputField.style.display = "none";
-                    }
-                }
-            });
-            document.getElementById('electroQuestTeamMembers').addEventListener('input', function() {
-              var numberOfTeamMembers = parseInt(this.value);
-              for (var i = 1; i <= 3; i++) {
-                  var inputField = document.getElementById("eqmember" + i);
-                  if (i <= numberOfTeamMembers) {
-                      inputField.style.display = "block";
-                  } else {
-                      inputField.style.display = "none";
-                  }
+
+          <label class="radio-label" for="eventElectroQuest">
+              <input type="radio" name="Select an event" value="ElectroQuest" id="eventElectroQuest" onchange="handleEventChange()"><span class="checkmark"></span> ElectroQuest
+          </label>
+              <div id="electroQuestFields" style="display: none;">
+                <label for="Number of Team members for ElectroQuest">Number of Team Members for ElectroQuest:</label>
+          <select id="electroQuestTeamMembers" name="Number of Team members for ElectroQuest" class="input-field">
+            <option value="">0</option>
+            <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+          </select><br>
+        
+            
+                <label for="EQ: team name ">ElectroQuest Team Name:</label>
+                <input type="text" name="EQ: team name "><br>
+            
+                <div id="eqmember1" style="display: none;">
+                <label for="EQ: name 1">Member 1:</label>
+                <input type="text" name="EQ: name 1"><br>  
+                <label for="EQ: number 1">Number 1:</label>
+                <input type="text" name="EQ: number 1"><br>
+              </div>
+        
+              <div id="eqmember2" style="display: none;">
+                <label for="EQ: name 2">Member 2:</label>
+                <input type="text" name="EQ: name 2"><br>  
+                <label for="EQ: number 2">Number 2:</label>
+                <input type="text" name="EQ: number 2"><br>
+              </div>
+        
+          <div id="eqmember3" style="display: none;">
+                <label for="EQ: name 3">Member 3:</label>
+                <input type="text" name="EQ: name 3"><br>
+            
+                <label for="EQ: number 3">Number 3:</label>
+                <input type="text" name="EQ: number 3"><br></div>
+              </div>
+          
+              <label class="radio-label" for="eventNritya-Abhay">
+              <input type="radio" name="Select an event" value="Nritya-Abhay" id="eventNritya-Abhay" onchange="handleEventChange()" ><span class="checkmark"></span> Nritya-Abhay
+          </label>
+          <div id="nrityaAbhayFields" style="display: none;">
+            <label for="Number of Team members for Nritya-Abhay">Number of Team Members for Nritya-Abhay:</label>
+      <select id="nrityaAbhayTeamMembers" name="Number of Team members for Nritya-Abhay" class="input-field">
+        <option value="">0</option>
+        <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+      </select><br>
+        
+            <label for="NA: team name">Team Name:</label>
+            <input type="text" name="NA: team name"><br>
+            <div id="namember1" style="display: none;">
+            <label for="NA: name 1">Member 1:</label>
+            <input type="text" name="NA: name 1"><br>
+        
+            <label for="NA: number 1">Number 1:</label>
+            <input type="text" name="NA: number 1"><br>
+          </div>
+          <div id="namember2" style="display: none;">
+            <label for="NA: name 2">Member 2:</label>
+            <input type="text" name="NA: name 2"><br>
+        
+            <label for="NA: number 2">Number 2:</label>
+            <input type="text" name="NA: number 2"><br>
+          </div>
+          <div id="namember3" style="display: none;">
+            <label for="NA: name 3">Member 3:</label>
+            <input type="text" name="NA: name 3"><br>
+        
+            <label for="NA: number 3">Number 3:</label>
+            <input type="text" name="NA: number 3"><br>
+          </div>
+          <div id="namember4" style="display: none;">
+            <label for="NA: name 4">Member 4:</label>
+            <input type="text" name="NA: name 4"><br>
+          
+            <label for="NA: number 4">Number 4:</label>
+            <input type="text" name="NA: number 4"><br>
+          </div>
+          <div id="namember5" style="display: none;">
+            <label for="NA: name 5">Member 5:</label>
+            <input type="text" name="NA: name 5"><br>
+        
+            <label for="NA: number 5">Number 5:</label>
+            <input type="text" name="NA: number 5"><br>
+          </div>
+          <div id="namember6" style="display: none;">
+            <label for="NA: name 6">Member 6:</label>
+            <input type="text" name="NA: name 6"><br>
+        
+            <label for="NA: number 6">Number 6:</label>
+            <input type="text" name="NA: number 6"><br>
+          </div>
+          <div id="namember7" style="display: none;">
+            <label for="NA: name 7">Member 7:</label>
+            <input type="text" name="NA: name 7"><br>
+        
+            <label for="NA: number 7">Number 7:</label>
+            <input type="text" name="NA: number 7"><br>
+          </div>
+          <div id="namember8" style="display: none;">
+            <label for="NA: name 8">Member 8:</label>
+            <input type="text" name="NA: name 8"><br>
+        
+            <label for="NA: number 8">Number 8:</label>
+            <input type="text" name="NA: number 8"><br>
+          </div>
+          </div>
+      </div>
+      
+
+      
+      
+    
+      
+    
+      
+    
+      
+    
+      
+      
+      
+    
+    <input type="submit" value="Submit" onclick="onsubmitto()">    
+    <script>
+      // Get all radio inputs
+        // Get all radio inputs
+const radioInputs = document.querySelectorAll('.radio-label input');
+
+// Add click event listener to each radio input
+radioInputs.forEach(input => {
+    input.addEventListener('click', function() {
+        // Toggle checked class
+        radioInputs.forEach(otherInput => {
+            if (otherInput !== input) {
+                otherInput.checked = false;
+                otherInput.parentElement.classList.remove('checked');
+            }
+        });
+        if (this.checked) {
+            this.parentElement.classList.add('checked');
+        } else {
+            this.parentElement.classList.remove('checked');
+        }
+    });
+});
+
+// Add submit event listener to the form
+document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    // Check if at least one event is selected
+    if (document.getElementById('eventLogicLoops').checked) {
+        // Check if LogicLoops team members field is empty
+        if (document.getElementById('logicLoopsTeamMembers').value === "") {
+            alert('Please select number of team members for LogicLoops.');
+            event.preventDefault(); // Prevent form submission
+            return; // Exit the function
+        }
+    }
+    if (!document.querySelector('.radio-label input:checked')) {
+        alert('Please select at least one event.');
+        event.preventDefault(); // Prevent the form from submitting
+    }
+});
+
+
+
+
+
+      function handleEventChange() {
+      var logicLoopsCheckbox = document.getElementById("eventLogicLoops");
+      var codeDeBasantiCheckbox = document.getElementById("eventCodeDeBasanti");
+      var piRatesCheckbox = document.getElementById("eventPiRates");
+      var electroQuestCheckbox = document.getElementById("eventElectroQuest");
+      var nrityaAbhayCheckbox = document.getElementById("eventNritya-Abhay");
+
+      // if (logicLoopsCheckbox.checked) {
+      //     if(piRatesCheckbox.checked){
+      //       piRatesCheckbox.checked=false;
+      //     }
+      //     piRatesCheckbox.disabled = true;            
+      // }else{
+      //   if(piRatesCheckbox.disabled){
+      //     piRatesCheckbox.disabled=false;
+      //   }
+      // }
+      // if (codeDeBasantiCheckbox.checked) {
+      //     if(electroQuestCheckbox.checked){
+      //       electroQuestCheckbox.checked=false;
+      //     }
+      //     electroQuestCheckbox.disabled = true;
+      // } else{
+      //   if(electroQuestCheckbox.disabled){
+      //     electroQuestCheckbox.disabled=false;
+      //     }
+      // }
+      // if (electroQuestCheckbox.checked) {
+      //     if(codeDeBasantiCheckbox.checked){
+      //       codeDeBasantiCheckbox.checked=false;
+      //     }
+      //     codeDeBasantiCheckbox.disabled = true;
+      // }else{
+      //   if(codeDeBasantiCheckbox.disabled){
+      //     codeDeBasantiCheckbox.disabled=false;
+      //   }
+      // }
+      // if (piRatesCheckbox.checked) {
+      //     if(logicLoopsCheckbox.checked){
+      //       logicLoopsCheckbox.checked=false;
+      //     }
+      //     logicLoopsCheckbox.disabled = true;
+      // } else{
+      //   if(logicLoopsCheckbox.disabled){
+      //     logicLoopsCheckbox.disabled=false;
+      //     }
+      // }
+      // Get all radio inputs
+
+
+
+
+      document.getElementById("logicLoopsFields").style.display = logicLoopsCheckbox.checked ? "block" : "none";
+      document.getElementById("codeDeBasantiFields").style.display = codeDeBasantiCheckbox.checked ? "block" : "none";
+      document.getElementById("piRatesFields").style.display = piRatesCheckbox.checked ? "block" : "none";
+      document.getElementById("electroQuestFields").style.display = electroQuestCheckbox.checked ? "block" : "none";
+      document.getElementById("nrityaAbhayFields").style.display = nrityaAbhayCheckbox.checked ? "block" : "none";
+      document.getElementById('nrityaAbhayTeamMembers').addEventListener('input', function() {
+          var numberOfTeamMembers = parseInt(this.value);
+          for (var i = 1; i <= 8; i++) {
+              var inputField = document.getElementById("namember" + i);
+              if (i <= numberOfTeamMembers) {
+                  inputField.style.display = "block";
+              } else {
+                  inputField.style.display = "none";
               }
-          });
-          document.getElementById('piRatesTeamMembers').addEventListener('input', function() {
-              var numberOfTeamMembers = parseInt(this.value);
-              for (var i = 1; i <= 3; i++) {
-                  var inputField = document.getElementById("prmember" + i);
-                  if (i <= numberOfTeamMembers) {
-                      inputField.style.display = "block";
-                  } else {
-                      inputField.style.display = "none";
-                  }
-              }
-          });
-          document.getElementById('codeDeBasantiTeamMembers').addEventListener('input', function() {
-              var numberOfTeamMembers = parseInt(this.value);
-              for (var i = 1; i <= 4; i++) {
-                  var inputField = document.getElementById("cdbmember" + i);
-                  if (i <= numberOfTeamMembers) {
-                      inputField.style.display = "block";
-                  } else {
-                      inputField.style.display = "none";
-                  }
-              }
-          });
-          document.getElementById('logicLoopsTeamMembers').addEventListener('input', function() {
-              var numberOfTeamMembers = parseInt(this.value);
-              for (var i = 1; i <= 3; i++) {
-                  var inputField = document.getElementById("member" + i);
-                  if (i <= numberOfTeamMembers) {
-                      inputField.style.display = "block";
-                  } else {
-                      inputField.style.display = "none";
-                  }
-              }
-          });
+          }
+      });
+      document.getElementById('electroQuestTeamMembers').addEventListener('input', function() {
+        var numberOfTeamMembers = parseInt(this.value);
+        for (var i = 1; i <= 3; i++) {
+            var inputField = document.getElementById("eqmember" + i);
+            if (i <= numberOfTeamMembers) {
+                inputField.style.display = "block";
+            } else {
+                inputField.style.display = "none";
+            }
+        }
+    });
+    document.getElementById('piRatesTeamMembers').addEventListener('input', function() {
+        var numberOfTeamMembers = parseInt(this.value);
+        for (var i = 1; i <= 3; i++) {
+            var inputField = document.getElementById("prmember" + i);
+            if (i <= numberOfTeamMembers) {
+                inputField.style.display = "block";
+            } else {
+                inputField.style.display = "none";
+            }
+        }
+    });
+    document.getElementById('codeDeBasantiTeamMembers').addEventListener('input', function() {
+        var numberOfTeamMembers = parseInt(this.value);
+        for (var i = 1; i <= 4; i++) {
+            var inputField = document.getElementById("cdbmember" + i);
+            if (i <= numberOfTeamMembers) {
+                inputField.style.display = "block";
+            } else {
+                inputField.style.display = "none";
+            }
+        }
+    });
+    document.getElementById('logicLoopsTeamMembers').addEventListener('input', function() {
+        var numberOfTeamMembers = parseInt(this.value);
+        for (var i = 1; i <= 3; i++) {
+            var inputField = document.getElementById("member" + i);
+            if (i <= numberOfTeamMembers) {
+                inputField.style.display = "block";
+            } else {
+                inputField.style.display = "none";
+            }
+        }
+    });
 
 
           // LogicLoops section
@@ -942,6 +1025,10 @@ window.addEventListener('DOMContentLoaded', handleScroll);
         document.addEventListener( 'mousedown', this.onMouseDown.bind( this ));
         document.addEventListener( 'mousemove', this.onMouseMove.bind( this ));
         document.addEventListener( 'mouseup', this.onMouseUp.bind( this ));
+        document.addEventListener('touchstart', this.onMouseDown.bind(this));
+document.addEventListener('touchmove', this.onMouseMove.bind(this));
+document.addEventListener('touchend', this.onMouseUp.bind(this));
+
         
     }
 
