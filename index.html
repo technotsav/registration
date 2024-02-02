@@ -31,6 +31,7 @@
 </html> -->
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,6 +41,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Momcake&display=swap');
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'); /* Include FontAwesome CSS */
+
+
     html, body { 
       
       margin: 0;
@@ -298,9 +303,21 @@
   <h1 class="special"> ↓↓ Register Now ↓↓  <br><span class="minText">Scroll Down.</span></h1>  
     <div id="magic"></div> 
 </div>
-
-  <form action="https://script.google.com/macros/s/AKfycbxhSPleC2-ZsnKaVYnNa63JrdZy2gCV1HgLYle3lIWowt6A23z8Z_iuHUeSi56_pCU/exec" method="POST" id="registrationForm">
+<!-- https://script.google.com/macros/s/AKfycbxhSPleC2-ZsnKaVYnNa63JrdZy2gCV1HgLYle3lIWowt6A23z8Z_iuHUeSi56_pCU/exec -->
+  <form action="https://script.google.com/macros/s/AKfycbwnMb914NGLlaXZ3bNO6Sou5wwGiEZufXqaSj-Y6CsHRF_f7k9PGOBNLMec6Q2dRWVV/exec" method="POST" id="registrationForm">
     
+  
+    <div style="position: relative; height: 20vh; margin-top: 0px; background-color: #f1e100; text-align: center; display: flex; align-items: center; justify-content: center;">
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+         <!-- WhatsApp icon -->
+          <label style="font-size: 20px; color: black; font-family: 'Roboto', sans-serif;">
+              <strong><i class="fab fa-whatsapp" style="font-size: 24px; color: black; margin-left: 10px;"></i>
+              <a href="https://chat.whatsapp.com/CduEd1cKe1hH23flKtKFl9" style="color: black; text-decoration: none; font-size: larger;">Click Here</strong> to Join The WhatsApp Group</a>
+          </label>
+      </div>
+  </div>
+  
+  
     <div class="form-container">
       <h1 class="fill"> Enter Your Details  </h1><br>
       <label for="fullName">Name:</label>
@@ -779,14 +796,14 @@ radioInputs.forEach(input => {
     
     
     
-    document.getElementById('fullName').addEventListener('input', function() {
-      const input = this;
-      if (!input.checkValidity()) {
-        input.setCustomValidity('Please enter only alphabets and spaces.');
-      } else {
-        input.setCustomValidity('');
-      }
-    });
+    // document.getElementById('fullName').addEventListener('input', function() {
+    //   const input = this;
+    //   if (!input.checkValidity()) {
+    //     input.setCustomValidity('Please enter only alphabets and spaces.');
+    //   } else {
+    //     input.setCustomValidity('');
+    //   }
+    // });
 
 
 
@@ -1453,4 +1470,8 @@ document.addEventListener('touchend', this.onMouseUp.bind(this));
   </script>
 </body>
 </html>
+
+
+
+
 
