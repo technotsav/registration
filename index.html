@@ -30,6 +30,7 @@
 
 </html> -->
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -302,9 +303,11 @@
     
     <div class="form-container">
       <h1 class="fill"> Enter Your Details  </h1><br>
-      <label for="Full Name [ Name - Surname ]">Name:</label>
-      <input type="text" placeholder="Name Surname" name="Full Name [ Name - Surname ]" required >
-  
+      <label for="fullName">Name:</label>
+<input type="text" placeholder="Name Surname" id="fullName" name="Full Name [ Name - Surname ]" required pattern="^[A-Za-z\s]+$">
+
+
+
       <label for="WhatsApp Number">Phone:</label>
       <input type="tel" pattern="[0-9]{10}" placeholder="WhatsApp Number" name="WhatsApp Number" required>
   
@@ -343,23 +346,23 @@
     
             <div id="member1" style="display: none;">
             <label for="LL: name 1">Member 1:</label>
-            <input type="text" name="LL: name 1" placeholder="Enter Name of First Member"><br>      
+            <input type="text" name="LL: name 1" placeholder="Enter Name of First Member" value=""><br>      
             <label for="LL: number 1">Number 1:</label>
-            <input type="text" name="LL: number 1" placeholder="Enter WhatsApp Number of First Member" ><br>
+            <input type="text" name="LL: number 1" placeholder="Enter WhatsApp Number of First Member" value="" pattern="[0-9]{10}"><br>
           </div>
     
             <div id="member2" style="display: none;">
             <label for="LL: name 2">Member 2:</label>
-            <input type="text" name="LL: name 2" placeholder="Enter Name of Second Member"><br>
+            <input type="text" name="LL: name 2" placeholder="Enter Name of Second Member" value=""><br>
             <label for="LL: number 2">Number 2:</label>
-            <input type="text" name="LL: number 2" placeholder="Enter WhatsApp Number of Second Member"><br>
+            <input type="text" name="LL: number 2" placeholder="Enter WhatsApp Number of Second Member" value="" pattern="[0-9]{10}"><br>
           </div>
     
             <div id="member3" style="display: none;">
             <label for="LL: name 3">Member 3:</label>
-            <input type="text" name="LL: name 3" placeholder="Enter Name of Third Member"><br>
+            <input type="text" name="LL: name 3" placeholder="Enter Name of Third Member" value=""><br>
             <label for="LL: number 3">Number 3:</label>
-            <input type="text" name="LL: number 3" placeholder="Enter WhatsApp Number of Third Member"><br>
+            <input type="text" name="LL: number 3" placeholder="Enter WhatsApp Number of Third Member" value="" pattern="[0-9]{10}"><br>
           </div>
           </div>
         
@@ -370,7 +373,7 @@
                   <div id="codeDeBasantiFields" style="display: none;">
                     <label for="Number of Team members for Code de basanti">Select Number of Team Members for Code De Basanti:</label>
                     <select id="codeDeBasantiTeamMembers" name="Number of Team members for Code de basanti" class="input-field">
-                      <option value="">0</option>  
+                      <option value="" selected>0</option>  
                       <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -382,30 +385,30 @@
                 
                       <div id="cdbmember1" style="display: none;">
                       <label for="CDB: name 1"  >Member 1:</label>
-                      <input type="text" name="CDB: name 1" placeholder="Enter Name of First Member"><br> 
+                      <input type="text" name="CDB: name 1" placeholder="Enter Name of First Member" value=""><br> 
                       <label for="CDB: number 1" >Number 1:</label>
-                      <input type="text" name="CDB: number 1" placeholder="Enter WhatsApp Number of First Member"><br>
+                      <input type="text" name="CDB: number 1" placeholder="Enter WhatsApp Number of First Member" value="" pattern="[0-9]{10}"><br>
                       </div>
             
                       <div id="cdbmember2" style="display: none;">
                       <label for="CDB: name 2" >Member 2:</label>
-                      <input type="text" name="CDB: name 2" placeholder="Enter Name of Second Member"><br>
+                      <input type="text" name="CDB: name 2" placeholder="Enter Name of Second Member" value=""><br>
                       <label for="CDB: number 2" >Number 2:</label>
-                      <input type="text" name="CDB: number 2" placeholder="Enter WhatsApp Number of Second Member"><br>
+                      <input type="text" name="CDB: number 2" placeholder="Enter WhatsApp Number of Second Member" value="" pattern="[0-9]{10}"><br>
                       </div>
             
                       <div id="cdbmember3" style="display: none;">
                       <label for="CDB: name 3" >Member 3:</label>
-                      <input type="text" name="CDB: name 3" placeholder="Enter Name of Third Member"><br>
+                      <input type="text" name="CDB: name 3" placeholder="Enter Name of Third Member" value=""><br>
                       <label for="CDB: number 3" >Number 3:</label>
-                      <input type="text" name="CDB: number 3" placeholder="Enter WhatsApp Number of Third Member"><br>
+                      <input type="text" name="CDB: number 3" placeholder="Enter WhatsApp Number of Third Member" value="" pattern="[0-9]{10}"><br>
                       </div>  
             
                       <div id="cdbmember4" style="display: none;">
                       <label for="CDB: name 4" >Member 4:</label>
-                      <input type="text" name="CDB: name 4" placeholder="Enter Name of Fourth Member"><br>
+                      <input type="text" name="CDB: name 4" placeholder="Enter Name of Fourth Member" value=""><br>
                       <label for="CDB: number 4" >Number 4:</label>
-                      <input type="text" name="CDB: number 4" placeholder="Enter WhatsApp Number of Fourth Member"><br>
+                      <input type="text" name="CDB: number 4" placeholder="Enter WhatsApp Number of Fourth Member" value="" pattern="[0-9]{10}"><br>
                       
                     </div>
                   </div>
@@ -417,7 +420,7 @@
                 <div id="piRatesFields" style="display: none;">
                   <label for="Number of Team members for pi-Rates">Select Number of Team Members for piRates:</label>
             <select id="piRatesTeamMembers" name="Number of Team members for pi-Rates" class="input-field">
-              <option value="">0</option>
+              <option value="" selected>0</option>
               <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -425,28 +428,28 @@
           
               
                   <label for="PR: team name">piRates Team Name:</label>
-                  <input type="text" name="PR: team name" placeholder="Enter Your Team Name"><br>
+                  <input type="text" name="PR: team name" placeholder="Enter Your Team Name" value=""><br>
               
                   <div id="prmember1" style="display: none;">
                   <label for="PR: name 1" >Member 1:</label>
-                  <input type="text" name="PR: name 1" placeholder="Enter Name of First Member"><br>
+                  <input type="text" name="PR: name 1" placeholder="Enter Name of First Member" value="" ><br>
               
                   <label for="PR: number 1" >Number 1:</label>
-                  <input type="text" name="PR: number 1" placeholder="Enter WhatsApp Number of First Member"><br>
+                  <input type="text" name="PR: number 1" placeholder="Enter WhatsApp Number of First Member" value="" pattern="[0-9]{10}"><br>
                 </div>
                 <div id="prmember2" style="display: none;">
                   <label for="PR: name 2" >Member 2:</label>
-                  <input type="text" name="PR: name 2" placeholder="Enter Name of Second Member"><br>
+                  <input type="text" name="PR: name 2" placeholder="Enter Name of Second Member" value=""><br>
               
                   <label for="PR: number 2" >Number 2:</label>
-                  <input type="text" name="PR: number 2" placeholder="Enter WhatsApp Number of Second Member"><br>
+                  <input type="text" name="PR: number 2" placeholder="Enter WhatsApp Number of Second Member" value="" pattern="[0-9]{10}"><br>
                 </div>
                 <div id="prmember3" style="display: none;">
                   <label for="PR: name 3" >Member 3:</label>
-                  <input type="text" name="PR: name 3" placeholder="Enter Name of Third Member"><br>
+                  <input type="text" name="PR: name 3" placeholder="Enter Name of Third Member" value=""><br>
               
                   <label for="PR: number 3" >Number 3:</label>
-                  <input type="text" name="PR: number 3" placeholder="Enter WhatsApp Number of Third Member"><br>
+                  <input type="text" name="PR: number 3" placeholder="Enter WhatsApp Number of Third Member" value="" pattern="[0-9]{10}"><br>
                 </div>
                 </div>
 
@@ -457,7 +460,7 @@
               <div id="electroQuestFields" style="display: none;">
                 <label for="Number of Team members for ElectroQuest">Select Number of Team Members for ElectroQuest:</label>
           <select id="electroQuestTeamMembers" name="Number of Team members for ElectroQuest" class="input-field">
-            <option value="">0</option>
+            <option value="" selected>0</option>
             <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -465,28 +468,28 @@
         
             
                 <label for="EQ: team name ">ElectroQuest Team Name:</label>
-                <input type="text" name="EQ: team name " placeholder="Enter Your Team Name"><br>
+                <input type="text" name="EQ: team name " placeholder="Enter Your Team Name" value=""><br>
             
                 <div id="eqmember1" style="display: none;">
                 <label for="EQ: name 1" >Member 1:</label>
-                <input type="text" name="EQ: name 1" placeholder="Enter Name of First Member"><br>  
+                <input type="text" name="EQ: name 1" placeholder="Enter Name of First Member" value=""><br>  
                 <label for="EQ: number 1" >Number 1:</label>
-                <input type="text" name="EQ: number 1" placeholder="Enter WhatsApp Number of First Member"><br>
+                <input type="text" name="EQ: number 1" placeholder="Enter WhatsApp Number of First Member" value=""><br>
               </div>
         
               <div id="eqmember2" style="display: none;">
                 <label for="EQ: name 2" >Member 2:</label>
-                <input type="text" name="EQ: name 2" placeholder="Enter Name of Second Member"><br>  
+                <input type="text" name="EQ: name 2" placeholder="Enter Name of Second Member" value=""><br>  
                 <label for="EQ: number 2" >Number 2:</label>
-                <input type="text" name="EQ: number 2" placeholder="Enter WhatsApp Number of Second Member"><br>
+                <input type="text" name="EQ: number 2" placeholder="Enter WhatsApp Number of Second Member" value=""><br>
               </div>
         
           <div id="eqmember3" style="display: none;">
                 <label for="EQ: name 3" >Member 3:</label>
-                <input type="text" name="EQ: name 3" placeholder="Enter Name of Third Member"><br>
+                <input type="text" name="EQ: name 3" placeholder="Enter Name of Third Member" value=""><br>
             
                 <label for="EQ: number 3" >Number 3:</label>
-                <input type="text" name="EQ: number 3" placeholder="Enter WhatsApp Number of Third Member"><br></div>
+                <input type="text" name="EQ: number 3" placeholder="Enter WhatsApp Number of Third Member" value=""><br></div>
               </div>
           
               <label class="radio-label" for="eventNritya-Abhay">
@@ -495,7 +498,7 @@
           <div id="nrityaAbhayFields" style="display: none;">
             <label for="Number of Team members for Nritya-Abhay">Select Number of Team Members for Nritya-Abhay:</label>
       <select id="nrityaAbhayTeamMembers" name="Number of Team members for Nritya-Abhay" class="input-field">
-        <option value="">0</option>
+        <option value="" selected>0</option>
         <option value="4">4</option>
           <option value="5">5</option>
           <option value="6">6</option>
@@ -504,62 +507,62 @@
       </select><br>
         
             <label for="NA: team name">Team Name:</label>
-            <input type="text" name="NA: team name" placeholder="Enter Your Team Name"><br>
+            <input type="text" name="NA: team name" placeholder="Enter Your Team Name" value=""><br>
             <div id="namember1" style="display: none;">
             <label for="NA: name 1">Member 1:</label>
-            <input type="text" name="NA: name 1"><br>
+            <input type="text" name="NA: name 1" value="" pattern="[a-z]+"><br>
         
             <label for="NA: number 1">Number 1:</label>
-            <input type="text" name="NA: number 1"><br>
+            <input type="text" name="NA: number 1" value="" pattern="[0-9]{10}"><br>
           </div>
           <div id="namember2" style="display: none;">
             <label for="NA: name 2">Member 2:</label>
-            <input type="text" name="NA: name 2"><br>
+            <input type="text" name="NA: name 2" value=""><br>
         
             <label for="NA: number 2">Number 2:</label>
-            <input type="text" name="NA: number 2"><br>
+            <input type="text" name="NA: number 2" value="" pattern="[0-9]{10}"><br>
           </div>
           <div id="namember3" style="display: none;">
             <label for="NA: name 3">Member 3:</label>
-            <input type="text" name="NA: name 3"><br>
+            <input type="text" name="NA: name 3" value=""><br>
         
             <label for="NA: number 3">Number 3:</label>
-            <input type="text" name="NA: number 3"><br>
+            <input type="text" name="NA: number 3" value="" pattern="[0-9]{10}"><br>
           </div>
           <div id="namember4" style="display: none;">
             <label for="NA: name 4">Member 4:</label>
-            <input type="text" name="NA: name 4"><br>
+            <input type="text" name="NA: name 4" value=""><br>
           
             <label for="NA: number 4">Number 4:</label>
-            <input type="text" name="NA: number 4"><br>
+            <input type="text" name="NA: number 4" value="" pattern="[0-9]{10}"><br>
           </div>
           <div id="namember5" style="display: none;">
             <label for="NA: name 5">Member 5:</label>
-            <input type="text" name="NA: name 5"><br>
+            <input type="text" name="NA: name 5" value=""><br>
         
             <label for="NA: number 5">Number 5:</label>
-            <input type="text" name="NA: number 5"><br>
+            <input type="text" name="NA: number 5" value="" pattern="[0-9]{10}"><br>
           </div>
           <div id="namember6" style="display: none;">
             <label for="NA: name 6">Member 6:</label>
-            <input type="text" name="NA: name 6"><br>
+            <input type="text" name="NA: name 6" value="" ><br>
         
             <label for="NA: number 6">Number 6:</label>
-            <input type="text" name="NA: number 6"><br>
+            <input type="text" name="NA: number 6" value="" pattern="[0-9]{10}"><br>
           </div>
           <div id="namember7" style="display: none;">
             <label for="NA: name 7">Member 7:</label>
-            <input type="text" name="NA: name 7"><br>
+            <input type="text" name="NA: name 7" value=""><br>
         
             <label for="NA: number 7">Number 7:</label>
-            <input type="text" name="NA: number 7"><br>
+            <input type="text" name="NA: number 7" value="" pattern="[0-9]{10}"><br>
           </div>
           <div id="namember8" style="display: none;">
             <label for="NA: name 8">Member 8:</label>
-            <input type="text" name="NA: name 8"><br>
+            <input type="text" name="NA: name 8" value="" ><br>
         
             <label for="NA: number 8">Number 8:</label>
-            <input type="text" name="NA: number 8"><br>
+            <input type="text" name="NA: number 8" value="" pattern="[0-9]{10}"><br>
           </div>
           </div>
       </div>
@@ -603,23 +606,187 @@ radioInputs.forEach(input => {
 });
 
 // Add submit event listener to the form
-document.getElementById('registrationForm').addEventListener('submit', function(event) {
-    // Check if at least one event is selected
-    if (document.getElementById('eventLogicLoops').checked) {
-        // Check if LogicLoops team members field is empty
-        if (document.getElementById('logicLoopsTeamMembers').value === "") {
-            alert('Please select number of team members for LogicLoops.');
-            event.preventDefault(); // Prevent form submission
-            return; // Exit the function
+    // document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    //     // Check if at least one event is selected
+    //     if (document.getElementById('eventLogicLoops').checked || 
+    //     document.getElementById('eventCodeDeBasanti').checked || 
+    //     document.getElementById('eventElectroQuest').checked ||
+    //     document.getElementById('eventPiRates').checked ||
+    //     document.getElementById('eventNritya-Abhay').checked ) {
+    //       if (document.getElementById('eventLogicLoops').checked) {
+    //           // Check if LogicLoops team members field is empty
+    //           if (document.getElementById('logicLoopsTeamMembers').value == "") {
+    //               alert('Please select number of team members for LogicLoops.');
+    //               event.preventDefault(); // Prevent form submission
+    //               return; // Exit the function
+    //           }
+    //       }
+    //       if (document.getElementById('eventCodeDeBasanti').checked) {
+    //           // Check if LogicLoops team members field is empty
+    //           if (document.getElementById('codeDeBasantiTeamMembers').value == "") {
+    //               alert('Please select number of team members for CodeDeBasanti.');
+    //               event.preventDefault(); // Prevent form submission
+    //               return; // Exit the function
+    //           }
+    //       }
+
+    //     }else {
+    //         event.preventDefault();
+    //         document.getElementById('eventCodeDeBasanti').setCustomValidity('Select one.');
+    //         document.getElementById('eventLogicLoops').setCustomValidity('Select one.');
+    //         document.getElementById('eventPiRates').setCustomValidity('Select one.');
+    //         document.getElementById('eventElectroQuest').setCustomValidity('Select one.');
+    //         document.getElementById('eventNritya-Abhay').setCustomValidity('Select one.');
+    //         // alert('Please select at least one event.');
+    //           // Prevent the form from submitting
+    //       }
+    // });
+
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    
+    const selectedEvent = document.querySelector('input[name="Select an event"]:checked');
+
+    if (selectedEvent !=null) {
+        const selectedEventId = selectedEvent.id;
+
+        switch (selectedEventId) {
+            case 'eventLogicLoops':
+                if (document.getElementById('logicLoopsTeamMembers').value === "") {
+                    alert('Please select the number of team members for LogicLoops.');
+                    // document.getElementById('logicLoopsTeamMembers').setCustomValidity('Select one.')
+                    event.preventDefault();
+                } else {
+                  const teamMembersSelect = document.getElementById('logicLoopsTeamMembers');
+                    const teamMembersCount = parseInt(teamMembersSelect.value);
+
+                    // Check member details based on the selected number of team members
+                    for (let i = 1; i <= teamMembersCount; i++) {
+                        const nameInput = document.getElementsByName(`LL: name ${i}`)[0];
+                        const numberInput = document.getElementsByName(`LL: number ${i}`)[0];
+
+                        if (nameInput.value === "" || numberInput.value === "") {
+                            alert(`Please enter details for Member ${i} for LogicLoops.`);
+                            event.preventDefault();
+                            return;
+                        }
+                    }
+                }
+                break;
+
+            case 'eventCodeDeBasanti':
+                if (document.getElementById('codeDeBasantiTeamMembers').value === "") {
+                    alert('Please select the number of team members for CodeDeBasanti.');
+                    event.preventDefault();
+                }else {
+                  const teamMembersSelect = document.getElementById('codeDeBasantiTeamMembers');
+                    const teamMembersCount = parseInt(teamMembersSelect.value);
+
+                    // Check member details based on the selected number of team members
+                    for (let i = 1; i <= teamMembersCount; i++) {
+                        const nameInput = document.getElementsByName(`CDB: name ${i}`)[0];
+                        const numberInput = document.getElementsByName(`CDB: number ${i}`)[0];
+
+                        if (nameInput.value === "" || numberInput.value === "") {
+                            alert(`Please enter details for Member ${i} for CodeDeBasanti.`);
+                            event.preventDefault();
+                            return;
+                        }
+                    }
+                }
+                break;
+            case 'eventElectroQuest':
+                if (document.getElementById('electroQuestTeamMembers').value === "") {
+                    alert('Please select the number of team members for ElectroQuest.');
+                    event.preventDefault();
+                }else {
+                  const teamMembersSelect = document.getElementById('electroQuestTeamMembers');
+                    const teamMembersCount = parseInt(teamMembersSelect.value);
+
+                    // Check member details based on the selected number of team members
+                    for (let i = 1; i <= teamMembersCount; i++) {
+                        const nameInput = document.getElementsByName(`EQ: name ${i}`)[0];
+                        const numberInput = document.getElementsByName(`EQ: number ${i}`)[0];
+
+                        if (nameInput.value === "" || numberInput.value === "") {
+                            alert(`Please enter details for Member ${i} for ElectroQuest.`);
+                            event.preventDefault();
+                            return;
+                        }
+                    }
+                }
+                break;
+            case 'eventPiRates':
+                if (document.getElementById('piRatesTeamMembers').value === "") {
+                    alert('Please select the number of team members for piRates.');
+                    event.preventDefault();
+                }else {
+                  const teamMembersSelect = document.getElementById('piRatesTeamMembers');
+                    const teamMembersCount = parseInt(teamMembersSelect.value, 10);
+
+                    // Check member details based on the selected number of team members
+                    for (let i = 1; i <= teamMembersCount; i++) {
+                        const nameInput = document.getElementsByName(`PR: name ${i}`)[0];
+                        const numberInput = document.getElementsByName(`PR: number ${i}`)[0];
+
+                        if (nameInput.value === "" || numberInput.value === "") {
+                            alert(`Please enter details for Member ${i} for piRates.`);
+                            event.preventDefault();
+                            return;
+                        }
+                    }
+                }
+                break;
+            case 'eventNritya-Abhay':
+                if (document.getElementById('nrityaAbhayTeamMembers').value === "") {
+                    alert('Please select the number of team members for Nritya-Abhay.');
+                    event.preventDefault();
+                }else {
+                  const teamMembersSelect = document.getElementById('nrityaAbhayTeamMembers');
+                    const teamMembersCount = parseInt(teamMembersSelect.value, 10);
+
+                    // Check member details based on the selected number of team members
+                    for (let i = 1; i <= teamMembersCount; i++) {
+                        const nameInput = document.getElementsByName(`NA: name ${i}`)[0];
+                        const numberInput = document.getElementsByName(`NA: number ${i}`)[0];
+
+                        if (nameInput.value === "" || numberInput.value === "") {
+                            alert(`Please enter details for Member ${i} for Nritya-Abhay.`);
+                            event.preventDefault();
+                            return;
+                        }
+                    }
+                }
+                break;
+
+            default:
+              
+                break;
         }
-    }
-    if (!document.querySelector('.radio-label input:checked')) {
-        alert('Please select at least one event.');
-        event.preventDefault(); // Prevent the form from submitting
+    } else {
+        event.preventDefault();
+        alert('Select an Event')
+        // document.getElementById('eventCodeDeBasanti').setCustomValidity('Select one.');
+        //     document.getElementById('eventLogicLoops').setCustomValidity('Select one.');
+        //     document.getElementById('eventPiRates').setCustomValidity('Select one.');
+        //     document.getElementById('eventElectroQuest').setCustomValidity('Select one.');
+        //     document.getElementById('eventNritya-Abhay').setCustomValidity('Select one.');
     }
 });
 
-
+    
+    
+    
+    
+    
+    
+    document.getElementById('fullName').addEventListener('input', function() {
+      const input = this;
+      if (!input.checkValidity()) {
+        input.setCustomValidity('Please enter only alphabets and spaces.');
+      } else {
+        input.setCustomValidity('');
+      }
+    });
 
 
 
@@ -1287,12 +1454,3 @@ document.addEventListener('touchend', this.onMouseUp.bind(this));
 </body>
 </html>
 
-
-
-
-
-
-  </script>
-  <script></script>
-</body>
-</html>
